@@ -76,12 +76,18 @@
             text-decoration: none;
             color: var(--text-primary);
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, background 0.3s;
             position: relative;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            background: #f3f6fa; /* subtle light background for visibility */
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
         }
 
         .nav-links a:hover {
             color: var(--primary-color);
+            background: #e9eefd;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.15);
         }
 
         .nav-links a::after {
@@ -592,6 +598,126 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Add dark mode support for better contrast with Dark Reader or prefers-color-scheme */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #a3bffa;
+                --secondary-color: #b794f4;
+                --accent-color: #fbb6ce;
+                --text-primary: #f7fafc;
+                --text-secondary: #cbd5e1;
+                --bg-primary: #181a1b;
+                --bg-secondary: #23272a;
+                --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            }
+
+            body {
+                background: var(--bg-primary);
+                color: var(--text-primary);
+            }
+
+            .navbar {
+                background: rgba(24, 26, 27, 0.95);
+            }
+
+            .nav-links a {
+                color: var(--text-primary);
+                background: #23272a;
+                box-shadow: 0 2px 8px rgba(163, 191, 250, 0.10);
+            }
+            .nav-links a:hover {
+                background: #181a1b;
+                color: var(--primary-color);
+                box-shadow: 0 4px 16px rgba(163, 191, 250, 0.18);
+            }
+
+            .logo {
+                -webkit-text-fill-color: var(--primary-color);
+            }
+
+            .hero {
+                background: linear-gradient(135deg, #23272a 0%, #181a1b 100%);
+                color: var(--text-primary);
+            }
+
+            .profile-card {
+                background: rgba(36, 39, 41, 0.7);
+                border: 1px solid rgba(255,255,255,0.08);
+            }
+
+            .section-title {
+                -webkit-text-fill-color: var(--primary-color);
+            }
+
+            .about {
+                background: var(--bg-secondary);
+            }
+
+            .stat-card,
+            .skill-category,
+            .education-card,
+            .achievements-list,
+            .project-card {
+                background: #23272a;
+                color: var(--text-primary);
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            }
+
+            .stat-number {
+                -webkit-text-fill-color: var(--primary-color);
+            }
+
+            .skill-tag {
+                background: #181a1b;
+                color: var(--text-secondary);
+                border: 1px solid #2d3748;
+            }
+
+            .project-header {
+                background: var(--gradient);
+                color: var(--text-primary);
+            }
+
+            .project-link.github {
+                background: var(--primary-color);
+                color: #181a1b;
+            }
+
+            .project-link.live {
+                background: var(--gradient);
+                color: #fff;
+            }
+
+            .tech-tag {
+                background: var(--gradient-accent);
+                color: #fff;
+            }
+
+            .footer {
+                background: #23272a;
+                color: var(--text-secondary);
+            }
+
+            .contact {
+                background: var(--gradient);
+                color: #fff;
+            }
+
+            .contact-item,
+            .social-link {
+                color: #fff;
+            }
+
+            .social-link {
+                background: rgba(36, 39, 41, 0.7);
+            }
+            .social-link:hover {
+                background: var(--primary-color);
+                color: #181a1b;
+            }
         }
     </style>
 </head>
